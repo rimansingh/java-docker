@@ -1,8 +1,20 @@
 # Setting Up CI/CD Pipeline with Vagrant, Docker, and Jenkins
 
+## Description
+Git Checkout: Clones the repository from GitHub.
+Compile: Compiles the Java code using Maven.
+SonarQube Analysis: Runs SonarQube scanner for code quality analysis.
+Trivy Scan: Scans the project for vulnerabilities using Trivy.
+Code Build: Builds the project using Maven.
+Docker Build & Push: Builds the Docker image and pushes it to Docker Hub.
+Docker Deploy: Deploys the Docker container from the Docker Hub image.
+
 ## Prerequisites
-Operating System: This guide assumes you're using a Linux-based operating system.
-Basic Terminal Skills: Familiarity with terminal commands.
+Jenkins server with required plugins: Maven Integration, Git, Docker, SonarQube Scanner.
+SonarQube server setup.
+Docker installed on the Jenkins server.
+Trivy installed on the Jenkins server.
+Docker Hub account with credentials configured in Jenkins.
 
 ## 1. Install Vagrant
 Vagrant simplifies the setup of development environments. Follow these steps to install Vagrant:
@@ -150,22 +162,6 @@ pipeline {
 }
 
 ```
-
-## Description
-Git Checkout: Clones the repository from GitHub.
-Compile: Compiles the Java code using Maven.
-SonarQube Analysis: Runs SonarQube scanner for code quality analysis.
-Trivy Scan: Scans the project for vulnerabilities using Trivy.
-Code Build: Builds the project using Maven.
-Docker Build & Push: Builds the Docker image and pushes it to Docker Hub.
-Docker Deploy: Deploys the Docker container from the Docker Hub image.
-
-## Prerequisites
-Jenkins server with required plugins: Maven Integration, Git, Docker, SonarQube Scanner.
-SonarQube server setup.
-Docker installed on the Jenkins server.
-Trivy installed on the Jenkins server.
-Docker Hub account with credentials configured in Jenkins.
 
 
 
