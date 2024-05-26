@@ -145,8 +145,8 @@ pipeline {
                 script{
                     withDockerRegistry(credentialsId: 'your-docker-username-and-password'){
                         sh "docker build -t docker-desktop ."
-                        sh "docker tag docker-desktop rimandeepsingh/docker-desktop:latest"
-                        sh "docker push rimandeepsingh/docker-desktop:latest"
+                        sh "docker tag docker-desktop your-dockerhub-image-path"
+                        sh "docker push your-dockerhub-image-path"
                     }
                 }
             }
@@ -156,7 +156,7 @@ pipeline {
             steps {
                 script{
                     withDockerRegistry(credentialsId: 'your-docker-username-and-password'){
-                        sh "docker run -d --name docker-desk -p 8081:8081 rimandeepsingh/docker-desktop:latest"
+                        sh "docker run -d --name docker-desk -p 8081:8081 your-dockerhub-image-path"
                     }
                 }
             }
