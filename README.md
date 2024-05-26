@@ -51,6 +51,9 @@ Docker allows you to package and run applications in containers. Here's how to i
 ```
 sudo apt-get update -y
 sudo apt install -y docker.io
+
+sudo usermod -aG docker $USER
+newgrp docker
 ```
 
 ## 3. Install Jenkins
